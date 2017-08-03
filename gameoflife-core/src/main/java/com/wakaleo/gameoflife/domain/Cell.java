@@ -9,12 +9,12 @@ package com.wakaleo.gameoflife.domain;
  */
 public enum Cell {
 	// Symbols to represent cell status
-    LIVE_CELL("+"), DEAD_CELL(".");
+    LIVE_CELL("*"), DEAD_CELL(".");
 
     private String symbol;
 
-    private Cell(String symbol) {
-        this.symbol = symbol;
+    private Cell(final String initalSymbol) {
+        this.symbol = initalSymbol;
     }
 
 	// Override function for easy printing of cell's symbol
@@ -25,7 +25,7 @@ public enum Cell {
     }
 
 	// Function used for creating a cell given a string
-    static Cell fromSymbol(String symbol) {
+    static Cell fromSymbol(final String symbol) {
         Cell cellRepresentedBySymbol = null;
         for (Cell cell : Cell.values()) {
             if (cell.symbol.equals(symbol)) {
